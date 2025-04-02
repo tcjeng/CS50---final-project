@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ book.title }} Details
+{% endblock %}
+
+{% block main %}
+    <h2>{{ book.title }} Details</h2>
+    <ul>
+        <li><strong>Author:</strong> {{ book.author }}</li>
+        <li><strong>Genre:</strong> {{ book.genre }}</li>
+        <li><strong>Pages:</strong> {{ book.page_count }}</li>
+        <li><strong>Status:</strong> {{ book.status }}</li>
+        <li><strong>Started Date:</strong> {{ book.date_started }}</li>
+        <li><strong>Finished Date:</strong> {{ book.date_finished }}</li>
+        <li><strong>Rating:</strong> {{ book.rating }}</li>
+        <li><strong>Review:</strong> {{ book.review }}</li>
+        <!-- Add any other details here -->
+    </ul>
+    <a href="/" class="btn btn-secondary">Back to Bookshelf</a>
+{% endblock %}

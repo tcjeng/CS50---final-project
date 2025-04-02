@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Set Reading Goal{% endblock %}
+
+{% block main %}
+<h1>Set Your Reading Goal</h1>
+
+<!-- If goal exists, display current goal info -->
+{% if goal %}
+    <h2>Your current goal:</h2>
+    <p>Books to read: {{ goal.books_to_read }}</p>
+    <p>Goal Date: {{ goal.goal_date }}</p>
+{% endif %}
+
+<!-- Form to set a new goal -->
+<form action="/goal" method="POST">
+    <div class="form-group">
+        <label for="books_to_read">Books to read:</label>
+        <input type="number" class="form-control" id="books_to_read" name="books_to_read" value="{{ goal.books_to_read if goal else '' }}" required>
+    </div>
+    <div class="form-group">
+        <label for="goal_date">Goal date:</label>
+        <input type="date" class="form-control" id="goal_date" name="goal_date" value="{{ goal.goal_date if goal else '' }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Set Goal</button>
+</form>
+
+{% endblock %}

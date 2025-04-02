@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Book
+{% endblock %}
+
+{% block main %}
+    <h1>Edit Book</h1>
+
+    <form action="/edit/{{ book.book_id }}" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" id="title" name="title" type="text" value="{{ book.title }}" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input class="form-control" id="author" name="author" type="text" value="{{ book.author }}" required>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input class="form-control" id="genre" name="genre" type="text" value="{{ book.genre }}">
+        </div>
+        <div class="form-group">
+            <label for="page_count">Page Count</label>
+            <input class="form-control" id="page_count" name="page_count" type="number" value="{{ book.page_count }}">
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="TBR" {% if book.status == "TBR" %}selected{% endif %}>TBR</option>
+                <option value="In Progress" {% if book.status == "In Progress" %}selected{% endif %}>In Progress</option>
+                <option value="Completed" {% if book.status == "Completed" %}selected{% endif %}>Completed</option>
+            </select>
+        </div>
+        <!-- Add the Review Field -->
+        <div class="form-group">
+            <label for="review">Review</label>
+            <textarea class="form-control" id="review" name="review">{{ book.review }}</textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Update Book</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add a New Book
+{% endblock %}
+
+{% block main %}
+    <h2>Add a Book to my bookshelf</h2>
+    <form action="/add" method="POST">
+        <div class="form-group">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="page_count">Page Count:</label>
+            <input type="number" id="page_count" name="page_count" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="date_started">Date Started:</label>
+            <input type="date" id="date_started" name="date_started" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="date_finished">Date Finished:</label>
+            <input type="date" id="date_finished" name="date_finished" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating (0-5):</label>
+            <input type="number" step="0.1" min="0" max="5" id="rating" name="rating" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" class="form-control">
+                <option value="TBR">To Be Read</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add Book</button>
+    </form>
+{% endblock %}
