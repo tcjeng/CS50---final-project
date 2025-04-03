@@ -1,4 +1,4 @@
-My Reads Web Application
+#### My Reads Web Application
 #### Description:
 The "My Reads" web application is designed to help users track their reading progress by providing a platform where they can manage their books and set personal reading goals. The app is built using Flask, a lightweight web framework for Python, and utilizes an SQLite database to store user data, including books and reading goals. The app’s key features include user authentication, the ability to add and manage books, and a new feature that allows users to set and track their reading goals.
 
